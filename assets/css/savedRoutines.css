@@ -1,0 +1,20 @@
+body {
+    background-color: slategrey;
+    font-family: 'Russo One';
+}
+#header {
+    text-align: center;
+    background-color: gold;
+}
+#homeBtn {
+    background-color: slategrey;
+    color: black;
+    font-size: 16px;
+    margin: 0px 5px;
+}
+#routine {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    margin: 0px 5px;
+}

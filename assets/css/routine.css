@@ -1,0 +1,38 @@
+body {
+    background-color: slategrey;
+    font-family: 'Russo One';
+}
+h2 {
+    color: white;
+}
+#header {
+    text-align: center;
+    background-color: black;
+}
+#clearRoutine {
+    background-color: red;
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+}
+#saveRoutine {
+    background-color: green;
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+}
+#homeBtn {
+    background-color: slategrey;
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+}
+#savedRoutines {
+    background-color: gold;
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+}
+#routineDiv {
+    background-color: salmon;
+}
