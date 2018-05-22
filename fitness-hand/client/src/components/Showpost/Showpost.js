@@ -1,14 +1,18 @@
 import React from "react";
+import "./Showpost.css";
 
 const Showpost = props => (
   <div id="post" class="col-xs-6 col-md-6"> 
-    <p> show all the post here</p>  
+    <h3><p id="headerPost" > View all posts here</p></h3>
 
-    <ul className="list-group">
+    <div  className="list-group">
       {props.posts.map(post => {
-        return <li className="list-group-item">{post.title}, {post.summary}</li>
+        return  <li id="allposts" className="list-group-item">
+                  <li id="titleclass" className ="titleclass"> Title: {post.title}</li> 
+                  <div id="descclass" className = "descclass" > {post.summary}</div>
+                </li>
       })}
-    </ul>
+    </div>
 
 </div>
 

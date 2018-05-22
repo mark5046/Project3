@@ -1,0 +1,19 @@
+#post {
+    background-color: lightgrey;
+    height: 400px;
+    overflow: auto;
+    border: 2px solid;        
+}
+#headerPost {
+    /* position: fixed;       */
+    border: 3px solid;       
+}
+#allposts {
+    background-color: beige;
+    width: 106%;
+    margin-left: -3%;    
+}
+#titleclass {
+    font-size: 20px;
+    margin-bottom: 10px;
+}

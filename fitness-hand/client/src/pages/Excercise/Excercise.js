@@ -27,8 +27,7 @@ class App extends React.Component {
     //create a new workout when click submit button
     handleFormSubmit = event => {
         event.preventDefault();
-        alert("button working");
-
+        
         const newWorkout = {
             title:this.state.title,
             summary: this.state.description            
@@ -55,7 +54,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
+                <div id="row" className="row">
                     <Form title={this.state.title}
                                 description={this.state.description}
                                 handleInputChange={this.handleInputChange}

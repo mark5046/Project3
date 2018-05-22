@@ -1,0 +1,11 @@
+#form {
+    background-color: lightgray;
+    height: 400px;
+    overflow: auto;
+    border: 2px solid;    
+}
+
+#headerForm {
+    border: 1px solid;        
+}
+
