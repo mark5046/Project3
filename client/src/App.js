@@ -17,6 +17,7 @@ import Login from "./components/auth/Login";
 import Meals from "./components/layout/Meals";
 import About from "./components/layout/About";
 import Workouts from "./components/layout/Workouts";
+import Scrape from "./components/articles/scrape";
 
 import './App.css';
 import { isAbsolute } from 'path';
