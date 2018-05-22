@@ -21,6 +21,10 @@ class Navbar extends Component {
             <Link className="nav-link" to="/about"> About Us
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/workouts"> Workouts
+            </Link>
+          </li>
         </ul>
 
         <ul className="navbar-nav ml-auto">
