@@ -6,6 +6,8 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const path = require("path");
+const apiRoutes = require("./routes/api/apiRoutes");
 
 const app = express();
 
@@ -28,10 +30,26 @@ app.use(passport.initialize());
 // Passport Config
 require('./config/passport')(passport);
 
+app.use(express.static("client/build"));
+
+app.use((req, res, next) => {
+  
+  console.log('url: ', req.url);
+  console.log('query: ', req.query);
+  next();
+})
+
 // Use Routes
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+app.use("/api/apiRoutes", apiRoutes);
+
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 const port = process.env.PORT || 5000;
 
