@@ -7,10 +7,11 @@ const Showpost = props => (
 
     <div  className="list-group">
       {props.posts.map(post => {
-        return  <li id="allposts" className="list-group-item">
-                  <li id="titleclass" className ="titleclass"> Title: {post.title}</li> 
-                  <div id="descclass" className = "descclass" > {post.summary}</div>
-                </li>
+        return  <div id="allposts" className="list-group-item">
+                  <p id="titleclass" className="titleclass"><b>Title:</b> {post.title}</p> 
+                  <div id="descclass" className="descclass" ><b>Description:</b> {post.summary}</div>
+                  <a href= {post.link} id="linkclass" className="linkclass" target="_blank"><b>Link:</b> {post.link}</a>
+                </div>
       })}
     </div>
 

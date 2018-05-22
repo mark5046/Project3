@@ -10,7 +10,8 @@ class App extends React.Component {
     state = {
         userInputs: [],//store data from db into userInput for get request.
         title: "",
-        description: "" 
+        description: "",
+        link: ""
     }
 
     componentDidMount() {
@@ -30,7 +31,8 @@ class App extends React.Component {
         
         const newWorkout = {
             title:this.state.title,
-            summary: this.state.description            
+            summary: this.state.description,
+            link: this.state.link            
         };    
             API.saveWorkout(newWorkout)
             .then(() => {
@@ -45,7 +47,8 @@ class App extends React.Component {
             this.setState({
                 userInputs: results.data,
                 title: "",                
-                description: ""
+                description: "",
+                link: ""
             });
         });
             
@@ -57,17 +60,10 @@ class App extends React.Component {
                 <div id="row" className="row">
                     <Form title={this.state.title}
                                 description={this.state.description}
+                                link={this.state.link}
                                 handleInputChange={this.handleInputChange}
                                 handleFormSubmit={this.handleFormSubmit}
                             />
-                    {/* <List title={this.state.title}
-                                description={this.state.description}
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit}
-                            />     */}
-                    {/* <div id="post" class="col-xs-6 col-md-6"> 
-                        <p> show all the post here</p>
-                    </div>  */}
                     <Showpost posts={this.state.userInputs} />
                 </div>
             </div>

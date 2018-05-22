@@ -4,8 +4,16 @@
     overflow: auto;
     border: 2px solid;    
 }
-
 #headerForm {
     border: 1px solid;        
 }
-
+#titleTable, #descTable, #linkTable{
+    margin-top: -5px;
+}
+#title, #description, #link {
+    color: black;
+    margin-top: -15px;
+}
+#submit {
+    /* margin-top: -5px; */
+}
