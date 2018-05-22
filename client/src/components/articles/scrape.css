@@ -1,0 +1,12 @@
+h5{ 
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+img{
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: black !important;
+    height: 15% !important;
+    width: 15% !important;
+}
