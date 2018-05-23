@@ -28,11 +28,17 @@ class App extends React.Component {
     //create a new workout when click submit button
     handleFormSubmit = event => {
         event.preventDefault();
-        
+        let newLink = this.state.link;
+
+        if(!this.state.link.startsWith("http://") && !this.state.link.startsWith("https://")){
+            console.log("TRUE OF FALSE", this.state.link, this.state.link.startsWith("https"))
+            newLink = `http://${this.state.link}`;
+        }
+
         const newWorkout = {
             title:this.state.title,
             summary: this.state.description,
-            link: this.state.link            
+            link: newLink           
         };    
             API.saveWorkout(newWorkout)
             .then(() => {
@@ -56,7 +62,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            // <div className="container">
                 <div id="row" className="row">
                     <Form title={this.state.title}
                                 description={this.state.description}
@@ -66,7 +72,7 @@ class App extends React.Component {
                             />
                     <Showpost posts={this.state.userInputs} />
                 </div>
-            </div>
+            // </div>
         );
     }
 }
