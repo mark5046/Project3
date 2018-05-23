@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import { clearCurrentProfile } from '../../actions/profileActions';
 
 class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
+    this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
 
@@ -15,6 +17,11 @@ class Navbar extends Component {
 
     const authLinks = (
       <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            Profile
+          </Link>
+        </li>
         <li className="nav-item">
           <a
             href=""
@@ -52,8 +59,8 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            Project-3
+          <Link className="navbar-brand" to="/public">
+            MuscleApp
           </Link>
           <button
             className="navbar-toggler"
@@ -66,23 +73,22 @@ class Navbar extends Component {
 
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+                <Link className="nav-link" to="/recipes">
+                  {' '}
+                  Recipes
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/workouts">
+                  {' '}
+                  Workouts
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {' '}
                   Trainers
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/recepies">
-                  {' '}
-                  Recepies
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  {' '}
-                  
-                  About Us
                 </Link>
               </li>
             </ul>
@@ -103,4 +109,6 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { logoutUser })(Navbar);
+export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
+  Navbar
+);
