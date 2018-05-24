@@ -44,6 +44,29 @@ import wCurl from "./components/bodyWorkouts/actualWorkouts/arms/wCurl";
 import kBack from "./components/bodyWorkouts/actualWorkouts/arms/kBack";
 import dip from "./components/bodyWorkouts/actualWorkouts/arms/dip";
 import sCrush from "./components/bodyWorkouts/actualWorkouts/arms/sCrush";
+// chest
+import bPress from "./components/bodyWorkouts/actualWorkouts/chest/bPress";
+import cDip from "./components/bodyWorkouts/actualWorkouts/chest/cDip";
+import fly from "./components/bodyWorkouts/actualWorkouts/chest/fly";
+import pOver from "./components/bodyWorkouts/actualWorkouts/chest/pOver";
+import pUp from "./components/bodyWorkouts/actualWorkouts/chest/pUp";
+import pkUP from "./components/bodyWorkouts/actualWorkouts/chest/pkUp";
+import pDec from "./components/bodyWorkouts/actualWorkouts/chest/pDec";
+// back
+import ltPdn from "./components/bodyWorkouts/actualWorkouts/back/ltPdn";
+import iCross from "./components/bodyWorkouts/actualWorkouts/back/iCross";
+import sRow from "./components/bodyWorkouts/actualWorkouts/back/sRow";
+import cgPdn from "./components/bodyWorkouts/actualWorkouts/back/cgPdn";
+// legs
+import squat from "./components/bodyWorkouts/actualWorkouts/legs/squat";
+import lunge from "./components/bodyWorkouts/actualWorkouts/legs/lunge";
+import cRaise from "./components/bodyWorkouts/actualWorkouts/legs/cRaise";
+import lCurl from "./components/bodyWorkouts/actualWorkouts/legs/lCurl";
+// abs
+import wRoll from "./components/bodyWorkouts/actualWorkouts/abs/wRoll";
+import sUp from "./components/bodyWorkouts/actualWorkouts/abs/sUp";
+import turk from "./components/bodyWorkouts/actualWorkouts/abs/turk";
+import sPthru from "./components/bodyWorkouts/actualWorkouts/abs/sPthru";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -107,6 +130,30 @@ class App extends Component {
               <Route exact path="/kBack" component={kBack} />
               <Route exact path="/dip" component={dip} />
               <Route exact path="/sCrush" component={sCrush} />
+              {/* chest */}
+              <Route exact path="/bPress" component={bPress} />
+              <Route exact path="/cDip" component={cDip} />
+              <Route exact path="/fly" component={fly} />
+              <Route exact path="/pOver" component={pOver} />
+              <Route exact path="/pUp" component={pUp} />
+              {/* <Route exact path="/pkUp" component={pkUp} /> */}
+              <Route exact path="/pDec" component={pDec} />
+              {/* back */}
+              <Route exact path="/ltPdn" component={ltPdn} />
+              <Route exact path="/iCross" component={iCross} />
+              <Route exact path="/sRow" component={sRow} />
+              <Route exact path="/cgPdn" component={cgPdn} />
+              {/* legs */}
+              <Route exact path="/squat" component={squat} />
+              <Route exact path="/lunge" component={lunge} />
+              <Route exact path="/cRaise" component={cRaise} />
+              <Route exact path="/lCurl" component={lCurl} />
+              {/* abs */}
+              <Route exact path="/wRoll" component={wRoll} />
+              <Route exact path="/sUp" component={sUp} />
+              <Route exact path="/turk" component={turk} />
+              <Route exact path="/sPthru" component={sPthru} />
+
             </div>
             <Footer />
           </div>
