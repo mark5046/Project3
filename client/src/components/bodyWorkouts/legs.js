@@ -15,10 +15,10 @@ render() {
 </div>
 <br></br>
 <div className="body-buttons">
-<button onClick={this.handleBtnClick} data-value="button1">Curls</button>
-<button onClick={this.handleBtnClick} data-value="button2">Yo boy get those arms big</button>
-<button onClick={this.handleBtnClick} data-value="button3">17 inch</button>
-<button onClick={this.handleBtnClick} data-value="button4">bubblegum</button>
+<Link to="/squat" className="btn btn-lg btn-warning mr-2">Squat</Link>
+<Link to="/lunge" className="btn btn-lg btn-warning mr-2">Lunge</Link>
+<Link to="/cRaise" className="btn btn-lg btn-warning mr-2">Calf Raise</Link>
+<Link to="/lCurl" className="btn btn-lg btn-warning mr-2">Leg Curl</Link>
 </div>
 </div>
 </div>

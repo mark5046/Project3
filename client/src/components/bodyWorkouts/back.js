@@ -15,10 +15,13 @@ render() {
 </div>
 <br></br>
 <div className="body-buttons">
-<button onClick={this.handleBtnClick} data-value="button1">Curls</button>
-<button onClick={this.handleBtnClick} data-value="button2">Yo boy get those arms big</button>
-<button onClick={this.handleBtnClick} data-value="button3">17 inch</button>
-<button onClick={this.handleBtnClick} data-value="button4">bubblegum</button>
+{/* <Link to="/" className="btn btn-lg btn-primary mr-2"></Link> */}
+{/* <Link to="/" className="btn btn-lg btn-primary mr-2"></Link> */}
+<Link to="/ltPdn" className="btn btn-lg btn-primary mr-2">Lat Pulldown</Link>
+{/* <Link to="/" className="btn btn-lg btn-primary mr-2"></Link> */}
+<Link to="/iCross" className="btn btn-lg btn-primary mr-2">Iron Cross</Link>
+<Link to="/sRow" className="btn btn-lg btn-primary mr-2">Seated Row</Link>
+<Link to="/cgPdn" className="btn btn-lg btn-primary mr-2">Closegrip Pulldown</Link>
 </div>
 </div>
 </div>
