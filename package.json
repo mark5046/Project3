@@ -4,11 +4,13 @@
   "description": "i dont even know",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
   },
   "author": "Denis Rodriguez",
   "license": "MIT",
@@ -16,6 +18,7 @@
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "gravatar": "^1.6.0",
@@ -23,6 +26,7 @@
     "mongoose": "^5.0.12",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "request": "^2.87.0",
     "validator": "^9.4.1"
   },
   "devDependencies": {

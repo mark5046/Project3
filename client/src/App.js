@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileActions';
+import Excercise from "./pages/Excercise";
 
 import { Provider } from 'react-redux';
 import store from './store';
 
+import PrivateRoute from './components/common/PrivateRoute';
 
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
-import Login from "./components/auth/Login";
+import Login from './components/auth/Login';
+import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/create-profile/CreateProfile';
+import EditProfile from './components/edit-profile/EditProfile';
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import NotFound from './components/not-found/NotFound';
+import Showpost from './components/Showpost/Showpost';
+import Form from './components/Form/Form';
 
 import Meals from "./components/layout/Meals";
 import About from "./components/layout/About";
 import Workouts from "./components/layout/Workouts";
 import Scrape from "./components/articles/scrape";
+import DashboardPub from "./components/dashboardPub/DashboardPub"
 
 import './App.css';
 import { isAbsolute } from 'path';
@@ -82,8 +94,8 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-    // TODO: Clear current Profile
-
+    // Clear current Profile
+    store.dispatch(clearCurrentProfile());
     // Redirect to login
     window.location.href = '/login';
   }
@@ -92,18 +104,103 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <div>
+      // <div>
+      // <Provider store={store}>
+      //   <Router>
+      //     <div className="App">
+      //       <Navbar />
+      //       <Route exact path="/" component={Landing} />
+      //       <Route exact path="/about" component= { About } />
+      //       <Route exact path="/workouts" component= { Workouts } />
+      //       <div className="container">
+      //        <Route exact path="/meals" component= {Meals} />
+      //         <Route exact path="/register" component={Register} />
+      //         <Route exact path="/login" component={Login} /> 
+      //       </div>
+      //       <div className="workout-routes">
+      //         <Route exact path="/shoulders" component={shoulders} />
+      //         <Route exact path="/arms" component={arms} />
+      //         <Route exact path="/chest" component={chest} />
+      //         <Route exact path="/back" component={back} />
+      //         <Route exact path="/legs" component={legs} />
+      //         <Route exact path="/abs" component={abs} />
+      //       </div>
+      //       <div className="actual-workouts">
+      //         {/* shoulders */}
+      //         <Route exact path="/mPress" component={mPress} />
+      //         <Route exact path="/boRow" component={boRow} />
+      //         <Route exact path="/fRaise" component={fRaise} />
+      //         <Route exact path="/uRow" component={uRow} />
+      //         <Route exact path="/yRaise" component={yRaise} />
+      //         <Route exact path="/rFly" component={rFly} />
+      //         <Route exact path="/shrug" component={shrug} />
+      //         {/* arms */}
+      //         <Route exact path="/hCurl" component={hCurl} />
+      //         <Route exact path="/pCurl" component={pCurl} />
+      //         <Route exact path="/rCurl" component={rCurl} />
+      //         <Route exact path="/wCurl" component={wCurl} />
+      //         <Route exact path="/kBack" component={kBack} />
+      //         <Route exact path="/dip" component={dip} />
+      //         <Route exact path="/sCrush" component={sCrush} />
+      //         {/* chest */}
+      //         <Route exact path="/bPress" component={bPress} />
+      //         <Route exact path="/cDip" component={cDip} />
+      //         <Route exact path="/fly" component={fly} />
+      //         <Route exact path="/pOver" component={pOver} />
+      //         <Route exact path="/pUp" component={pUp} />
+      //         {/* <Route exact path="/pkUp" component={pkUp} /> */}
+      //         <Route exact path="/pDec" component={pDec} />
+      //         {/* back */}
+      //         <Route exact path="/ltPdn" component={ltPdn} />
+      //         <Route exact path="/iCross" component={iCross} />
+      //         <Route exact path="/sRow" component={sRow} />
+      //         <Route exact path="/cgPdn" component={cgPdn} />
+      //         {/* legs */}
+      //         <Route exact path="/squat" component={squat} />
+      //         <Route exact path="/lunge" component={lunge} />
+      //         <Route exact path="/cRaise" component={cRaise} />
+      //         <Route exact path="/lCurl" component={lCurl} />
+      //         {/* abs */}
+      //         <Route exact path="/wRoll" component={wRoll} />
+      //         <Route exact path="/sUp" component={sUp} />
+      //         <Route exact path="/turk" component={turk} />
+      //         <Route exact path="/sPthru" component={sPthru} />
+
+      //       </div>
+      //       <Footer />
+
       <Provider store={store}>
         <Router>
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/about" component= { About } />
-            <Route exact path="/workouts" component= { Workouts } />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/workouts" component={Workouts} />
             <div className="container">
-             <Route exact path="/meals" component= {Meals} />
+              <Route exact path="/meals" component={Meals} />
               <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} /> 
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:handle" component={Profile} />
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
+                />
+              </Switch>
+              <Route exact path="/public" component={DashboardPub} />
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <div className="workout-routes">
               <Route exact path="/shoulders" component={shoulders} />
@@ -159,8 +256,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
-      </div>
-    );
+  );
   }
 }
 
