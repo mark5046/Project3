@@ -1,0 +1,38 @@
+#form {
+    background-color: aqua;
+    height: 420px;
+    overflow: hidden;
+    border: 2px solid;
+    /* margin-right: 1%;        */
+}
+
+#row {
+    width: 98%;
+    margin:0 auto;
+}
+/* .container {
+    width: 110%;
+    margin-left: 30px;
+} */
+#headerForm {
+    /* border: 1px solid;         */
+    margin-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+}
+#titleTable, #descTable, #linkTable{
+    margin-top: -5px;    
+    margin-left: 10px;
+}
+#headerForm {
+    /* border-bottom: 1px solid; */
+}
+#title, #description, #link {
+    color: black;
+    margin-top: -15px;
+}
+#submit {
+    /* margin-top: -5px; */
+    margin-left: 10px;
+    background-color: darkslategray;
+}
