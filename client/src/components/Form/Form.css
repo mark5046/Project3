@@ -1,7 +1,7 @@
 #form {
-    background-color: aqua;
-    height: 420px;
-    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.6);
+    height: 450px;
+    overflow: auto;
     border: 2px solid;
     /* margin-right: 1%;        */
 }
@@ -17,7 +17,7 @@
 #headerForm {
     /* border: 1px solid;         */
     margin-bottom: 30px;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
 }
 #titleTable, #descTable, #linkTable{
@@ -30,9 +30,11 @@
 #title, #description, #link {
     color: black;
     margin-top: -15px;
+    font-size: 20px;
 }
 #submit {
     /* margin-top: -5px; */
     margin-left: 10px;
-    background-color: darkslategray;
+    background-color: black;
+    color: whitesmoke;
 }

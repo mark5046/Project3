@@ -1,4 +1,6 @@
 .jumbotron {
   min-height: 300px;
   padding-top: 100px;
+  background: url(../../../img/community.jpg);
+  background-size: 60%;
 }

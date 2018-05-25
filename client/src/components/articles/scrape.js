@@ -17,14 +17,14 @@ class Scrape extends Component {
         console.log(this.state)
         return (
             <div className="scrapeWrapper">
-            <h3 className>Here are the latest headlines from Men's Journal</h3>
+            <h3 className="text-center">Here are the latest headlines from Men's Journal</h3>
             <ul className ="scrapeContainer">
                 {this.state.articles.map(article => {
                     return <li className="row">
-                        <div class="xs-col-2" />
+                        <div class="xs-col-3" />
                         <img src={article.img} />
 
-                        <div class="xs-col-10" />
+                        <div class="xs-col-9" />
                         <a href={article.link} target="_blank"><h5>
                             {article.title}</h5>
                         </a>

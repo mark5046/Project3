@@ -12,18 +12,13 @@ class DashboardPub extends Component {
         return(
             <div className="container">
             <Cover />
-            <div className="row" />
-            <div className="xs-col-6" />
-            {/* <Form /> */}
-            <div className="xs-col-6" />
-            {/* <Showpost /> */}
 
 
             <div className="row" />
-            <div className="xs-col-6" />
-            <Exercise />
             <div className="xs-col-6" />
             <Scrape />
+            <div className="xs-col-6" />
+            <Exercise />
             </div>
         )
     };
