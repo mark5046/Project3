@@ -1,10 +1,9 @@
 #post {
-    background-color: beige;
-    height: 420px;
+    background-color: rgb(255, 255, 255, 0.6);
+    height: 450px;
     overflow: auto;
-    border: 2px solid;      
-    /* color: black;   */
-    /* margin-right: -30px; */
+    border: 2px solid;
+    /* margin-right: 1%;        */
 }
 
 #headerPost {
@@ -16,7 +15,7 @@
     /* border-bottom: 1px solid; */
 }
 #allposts {
-    background-color: lightseagreen;
+    background-color: whitesmoke;
     /* width: 106%; */
     margin-left: 1px;      
 }
